@@ -4793,7 +4793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: BARBARIAN
 --- !u!222 &983409136
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7751,11 +7751,29 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: BARBARIAN
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: BARD
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: CLERIC
+      m_Image: {fileID: 0}
+    - m_Text: DRUID
+      m_Image: {fileID: 0}
+    - m_Text: FIGHTER
+      m_Image: {fileID: 0}
+    - m_Text: MONK
+      m_Image: {fileID: 0}
+    - m_Text: PALADIN
+      m_Image: {fileID: 0}
+    - m_Text: RANGER
+      m_Image: {fileID: 0}
+    - m_Text: ROGUE
+      m_Image: {fileID: 0}
+    - m_Text: SORCERER
+      m_Image: {fileID: 0}
+    - m_Text: WARLOCK
+      m_Image: {fileID: 0}
+    - m_Text: WIZARD
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8608,7 +8626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: DRAGONBORN
 --- !u!222 &2006782498
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8707,15 +8725,39 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: DRAGONBORN
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: DWARF
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: ELF
+      m_Image: {fileID: 0}
+    - m_Text: GNOME
+      m_Image: {fileID: 0}
+    - m_Text: HALF ELF
+      m_Image: {fileID: 0}
+    - m_Text: HALF ORC
+      m_Image: {fileID: 0}
+    - m_Text: HALFLING
+      m_Image: {fileID: 0}
+    - m_Text: HUMAN
+      m_Image: {fileID: 0}
+    - m_Text: TIEFLING
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 326046775}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2050879384
 MonoBehaviour:
