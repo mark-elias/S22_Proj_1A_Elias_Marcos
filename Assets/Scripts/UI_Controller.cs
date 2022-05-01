@@ -36,7 +36,22 @@ public class UI_Controller : MonoBehaviour {
     public Text Output_Wisdom;
     public Text Output_Charisma;
 
+    // Health Points & Experience Points
+    public InputField Input_CurrentHealthPoints;
+    public InputField Input_MaxHealthPoints;
 
+    public Text Output_CurrentHealthPoints;
+    public Text Output_MaxHealthPoints;
+
+    public InputField Input_CurrentExperiencePoints;
+    public InputField Input_MaxExperiencePoints;
+
+    public Text Output_CurrentExperiencePoints;
+    public Text Output_MaxExperiencePoints;
+
+    // Armor
+    public InputField Input_Armor;
+    public Text Output_Armor;
 
 
     // ------------- FUNCTIONS --------------------
@@ -311,6 +326,33 @@ public class UI_Controller : MonoBehaviour {
         Output_Charisma.text = sumOfAllRolls.ToString();
     }
 
+    // Health & EXP --------------------------------------------
+    public void Display_Current_HealthPoints()
+    {
+        Output_CurrentHealthPoints.text = Input_CurrentHealthPoints.text;
+    }
+
+    public void Display_Max_HealthPoints()
+    {
+        Output_MaxHealthPoints.text = Input_MaxHealthPoints.text;
+    }
+
+    public void Display_Current_EXP()
+    {
+        Output_CurrentExperiencePoints.text = Input_CurrentExperiencePoints.text;
+    }
+
+    public void Display_Max_EXP()
+    {
+        Output_MaxExperiencePoints.text = Input_MaxExperiencePoints.text;
+    }
+
+    // ------------------------------------------------------------------------
+
+    public void Armor()
+    {
+        Output_Armor.text = Input_Armor.text;
+    }
 
 
 
