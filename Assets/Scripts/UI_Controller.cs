@@ -25,9 +25,17 @@ public class UI_Controller : MonoBehaviour {
     public InputField Input_Alignment;
     public Text Output_Alignment;
 
-    // Abilities
+    // Dice Roll
+    private float sumOfAllRolls;
 
+    // Abilities
     public Text Output_Strength;
+    public Text Output_Dexterity;
+    public Text Output_Constitution;
+    public Text Output_Intelligence;
+    public Text Output_Wisdom;
+    public Text Output_Charisma;
+
 
 
 
@@ -183,66 +191,135 @@ public class UI_Controller : MonoBehaviour {
     // Abilities --------------------
     // Dice Rolling =----------
 
-    public void DiceRollStrength()
+    public void DiceRoll()
     {
 
         Debug.Log("Dice roll called");
 
         int[] megaRolls = new int[3];
 
-        // for loop
-        // 3 mega rolls
+        //------- 3 Mega Rolls For Loop
 
-// ---- One Mega Roll -----------------
-        int[] Roll_5D8 = new int[5];
-
-        int[] Roll_6D3 = new int[6];
-
-         for (int i = 0; i < Roll_5D8.Length; i++)
-         {
-            Roll_5D8[i] = Random.Range(1, 8);
-         }
-
-        for (int i = 0; i < Roll_6D3.Length; i++)
+        for (int z = 0; z < 3; z++)
         {
-            Roll_6D3[i] = Random.Range(1, 3);
 
+            // ---- One Mega Roll -----------------
+            int[] Roll_5D8 = new int[5];
+
+            int[] Roll_6D3 = new int[6];
+
+            for (int i = 0; i < Roll_5D8.Length; i++)
+            {
+                Roll_5D8[i] = Random.Range(1, 8);
+            }
+
+            for (int i = 0; i < Roll_6D3.Length; i++)
+            {
+                Roll_6D3[i] = Random.Range(1, 3);
+
+            }
+
+            // combine the two array together
+            int[] oneRoll = new int[11];
+
+            int a = 0;
+
+            for (int i = 0; i < Roll_5D8.Length; i++)
+            {
+                oneRoll[a] = Roll_5D8[i];
+                a++;
+            }
+
+            int b = 5;
+
+            for (int i = 0; i < Roll_6D3.Length; i++)
+            {
+                oneRoll[b] = Roll_6D3[i];
+                b++;
+            }
+
+            // add the values in Array
+
+            int oneRoll_sum = 0;
+
+            for (int i = 0; i < oneRoll.Length; i++)
+            {
+                oneRoll_sum = oneRoll_sum + oneRoll[i];
+            }
+
+            // We now have one big mega roll of 5D8 + 6D3
+            // Now save that value into an array for the 3 Mega Rolls
+
+            megaRolls[z] = oneRoll_sum;
+
+        }   //-------------- End For Loop ------------------------------
+
+        // now we need to add the 3 highest rolls
+
+        sumOfAllRolls = 0;
+
+        for (int i = 0; i < megaRolls.Length; i++)
+        {
+            sumOfAllRolls = sumOfAllRolls + megaRolls[i];
         }
 
-        // combine the two array together
-        int[] oneRoll = new int[11];
+        // +2 modifier
+        sumOfAllRolls = sumOfAllRolls + 2;
 
-        int a = 0;
+            
+    }      // Function End ---- Dice Roll
 
-        for (int i = 0; i < Roll_5D8.Length; i++)
-        {
-           oneRoll[a] = Roll_5D8[i];
-            a++;
-        }
+    public void Ability_Strength()
+    {
+        DiceRoll();
 
-        int b = 5;
-
-        for (int i = 0; i < Roll_6D3.Length; i++)
-        {
-            oneRoll[b] = Roll_6D3[i];
-            b++;
-        }
-
-        // add the values in Array
-
-        int oneRoll_sum = 0;
-
-        for (int i = 0; i < oneRoll.Length; i++)
-        {
-            oneRoll_sum = oneRoll_sum + oneRoll[i];
-        }
-
-        // We now have one big mega roll of 5D8 + 6D3
-        // Now save that value into an array for the 3 Mega Rolls
-        megaRolls[i] = oneRoll_sum;
-
-// ----- One Mega Roll ----------------------------------------
+        Output_Strength.text = sumOfAllRolls.ToString();
     }
 
-    // ---------------------------------------------------------------------
-}
+    public void Ability_Dexterity()
+    {
+        DiceRoll();
+        
+        Output_Dexterity.text = sumOfAllRolls.ToString();
+    }
+
+    public void Ability_Constitution()
+    {
+        DiceRoll();
+        
+        Output_Constitution.text = sumOfAllRolls.ToString();
+    }
+
+    public void Ability_Intelligence()
+    {
+        DiceRoll();
+        
+        Output_Intelligence.text = sumOfAllRolls.ToString();
+    }
+
+    public void Ability_Wisdom()
+    {
+        DiceRoll();
+        
+        Output_Wisdom.text = sumOfAllRolls.ToString();
+    }
+
+    public void Ability_Charisma()
+    {
+        DiceRoll();
+        
+        Output_Charisma.text = sumOfAllRolls.ToString();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}       // Class End
