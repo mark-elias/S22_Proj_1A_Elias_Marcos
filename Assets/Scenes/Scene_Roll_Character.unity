@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 69997738}
   - component: {fileID: 69997739}
   m_Layer: 5
-  m_Name: Slider_SpeedSelect (2)
+  m_Name: Slider_Jumping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,10 +365,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 660583402}
   m_HandleRect: {fileID: 1520183172}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 2
   m_MaxValue: 56
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 95809932}
   - component: {fileID: 95809931}
   m_Layer: 5
-  m_Name: Text_DisplaySpeed (1)
+  m_Name: Text_Display_Running
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 260315522}
   - component: {fileID: 260315521}
   m_Layer: 5
-  m_Name: Text_DisplaySpeed (2)
+  m_Name: Text_Display_Jumping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1697,6 +1697,8 @@ MonoBehaviour:
   Output_MaxExperiencePoints: {fileID: 1121949349}
   Input_Armor: {fileID: 1343989046}
   Output_Armor: {fileID: 1879858602}
+  Input_WalkingSlider: {fileID: 1965620227}
+  Output_WalkingSlider: {fileID: 1374972263}
 --- !u!4 &326046777
 Transform:
   m_ObjectHideFlags: 0
@@ -3480,7 +3482,7 @@ GameObject:
   - component: {fileID: 791145707}
   - component: {fileID: 791145708}
   m_Layer: 5
-  m_Name: Slider_SpeedSelect (1)
+  m_Name: Slider_Running
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3552,10 +3554,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1317503938}
   m_HandleRect: {fileID: 1851216823}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 2
   m_MaxValue: 56
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6265,7 +6267,7 @@ GameObject:
   - component: {fileID: 1374972264}
   - component: {fileID: 1374972263}
   m_Layer: 5
-  m_Name: Text_DisplaySpeed
+  m_Name: Text_Display_Walking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8135,7 +8137,7 @@ GameObject:
   - component: {fileID: 1965620226}
   - component: {fileID: 1965620227}
   m_Layer: 5
-  m_Name: Slider_SpeedSelect
+  m_Name: Slider_Walking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8207,13 +8209,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 409612342}
   m_HandleRect: {fileID: 272528155}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 2
   m_MaxValue: 56
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_WholeNumbers: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 326046776}
+        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+        m_MethodName: Speed_Walking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1981025834
 GameObject:
   m_ObjectHideFlags: 0

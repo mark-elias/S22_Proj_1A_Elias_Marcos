@@ -53,6 +53,10 @@ public class UI_Controller : MonoBehaviour {
     public InputField Input_Armor;
     public Text Output_Armor;
 
+    // Speed
+    public Slider Input_WalkingSlider;
+    public Text Output_WalkingSlider;
+
 
     // ------------- FUNCTIONS --------------------
 
@@ -351,7 +355,15 @@ public class UI_Controller : MonoBehaviour {
 
     public void Armor()
     {
+       // (Input_Armor.text == int)
         Output_Armor.text = Input_Armor.text;
+    }
+
+    // ---- Speed --------------------------
+
+    public void Speed_Walking()
+    {
+        Output_WalkingSlider.text = Input_WalkingSlider.ToString();
     }
 
 
