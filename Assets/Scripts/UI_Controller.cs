@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
 public class UI_Controller : MonoBehaviour {
 
     // -- --------------------------------------------------
@@ -57,14 +56,29 @@ public class UI_Controller : MonoBehaviour {
     public Slider Input_WalkingSlider;
     public Text Output_WalkingSlider;
 
+    public Slider Input_RunningSlider;
+    public Text Output_RunningSlider;
+
+    public Slider Input_JumpingSlider;
+    public Text Output_JumpingSlider;
+
 
     // ------------- FUNCTIONS --------------------
 
     void Start()
     {
+
+    }
+
+    void Update()
+    {
         
     }
 
+    public void textUpdate(float value)
+    {
+       // percentageText.text = value.ToString();
+    }
 
     // -------------------------------------------------
 
@@ -363,7 +377,17 @@ public class UI_Controller : MonoBehaviour {
 
     public void Speed_Walking()
     {
-        Output_WalkingSlider.text = Input_WalkingSlider.ToString();
+        Output_WalkingSlider.text = Input_WalkingSlider.value.ToString();
+    }
+
+    public void Speed_Running()
+    {
+        Output_RunningSlider.text = Input_RunningSlider.value.ToString();
+    }
+
+    public void Speed_Jumping()
+    {
+        Output_JumpingSlider.text = Input_JumpingSlider.value.ToString();
     }
 
 

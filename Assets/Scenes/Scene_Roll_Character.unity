@@ -367,11 +367,23 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 2
   m_MaxValue: 56
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 326046776}
+        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+        m_MethodName: Speed_Jumping
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &95809929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1373,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11500000, guid: 4417c94d4109f414b8f6e24a6f0b371c, type: 3}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1699,6 +1711,10 @@ MonoBehaviour:
   Output_Armor: {fileID: 1879858602}
   Input_WalkingSlider: {fileID: 1965620227}
   Output_WalkingSlider: {fileID: 1374972263}
+  Input_RunningSlider: {fileID: 791145708}
+  Output_RunningSlider: {fileID: 95809931}
+  Input_JumpingSlider: {fileID: 69997739}
+  Output_JumpingSlider: {fileID: 260315521}
 --- !u!4 &326046777
 Transform:
   m_ObjectHideFlags: 0
@@ -3556,11 +3572,23 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 2
   m_MaxValue: 56
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 326046776}
+        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+        m_MethodName: Speed_Running
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &819787566
 GameObject:
   m_ObjectHideFlags: 0
