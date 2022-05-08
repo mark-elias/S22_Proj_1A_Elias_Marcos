@@ -569,6 +569,8 @@ public class UI_Controller : MonoBehaviour {
 
     public void Quit_Application()
     {
+
+        Debug.Log("quit application called");
         Application.Quit();
     }
 
