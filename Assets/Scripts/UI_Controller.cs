@@ -488,7 +488,7 @@ public class UI_Controller : MonoBehaviour {
     // Health & EXP --------------------------------------------
     public void Display_Current_HealthPoints()
     {
-        Output_CurrentHealthPoints.text = Input_CurrentHealthPoints.text;
+        //Output_CurrentHealthPoints.text = Input_CurrentHealthPoints.text;
 
         // JSON
         player.currentHealth = int.Parse(Input_CurrentHealthPoints.text);
@@ -497,7 +497,7 @@ public class UI_Controller : MonoBehaviour {
 
     public void Display_Max_HealthPoints()
     {
-        Output_MaxHealthPoints.text = Input_MaxHealthPoints.text;
+        //Output_MaxHealthPoints.text = Input_MaxHealthPoints.text;
 
         // JSON
         player.maxHealth = int.Parse(Input_MaxHealthPoints.text);
@@ -505,7 +505,7 @@ public class UI_Controller : MonoBehaviour {
 
     public void Display_Current_EXP()
     {
-        Output_CurrentExperiencePoints.text = Input_CurrentExperiencePoints.text;
+        //Output_CurrentExperiencePoints.text = Input_CurrentExperiencePoints.text;
 
         // JSON
         player.currentExperience = int.Parse(Input_CurrentExperiencePoints.text);
@@ -513,7 +513,7 @@ public class UI_Controller : MonoBehaviour {
 
     public void Display_Max_EXP()
     {
-        Output_MaxExperiencePoints.text = Input_MaxExperiencePoints.text;
+        //Output_MaxExperiencePoints.text = Input_MaxExperiencePoints.text;
 
         // JSON
         player.maxExperience = int.Parse(Input_MaxExperiencePoints.text);
@@ -567,7 +567,10 @@ public class UI_Controller : MonoBehaviour {
     }
 
 
-
+    public void Quit_Application()
+    {
+        Application.Quit();
+    }
 
 
 
