@@ -1,0 +1,11 @@
+All of the art I made myself with Adobe Fresco
+
+For help with the code and with Unity, I watched the following Youtube channels:
+
+
+spartan, edo. (2020, January 13). Unity integer float parse inputfield. YouTube. Retrieved May 7, 2022, from https://youtu.be/kLI1vD-hwzA 
+
+Reso Coder. (2017, March 24). Singletons in unity - simple tutorial for Beginners. YouTube. Retrieved May 1, 2022, from https://youtu.be/CPKAgyp8cno 
+
+Imphenzia. (2020, July 24). Learn unity - the most basic tutorial I'll ever make. YouTube. Retrieved May 1, 2022, from https://youtu.be/pwZpJzpE2lQ 
+
