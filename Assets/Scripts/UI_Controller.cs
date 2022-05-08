@@ -3,10 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//
+using System.IO;
+
+public class Player
+{
+    // name
+    public string name;
+
+    // race, class, alignment
+    public string race;
+    public string playerClass;
+    public string alignment;
+
+    // health and xp
+    public int currentHealth;
+    public int maxHealth;
+
+    public int currentExperience;
+    public int maxExperience;
+
+    // armor
+    public int armor;
+
+    // speed
+    public int walkingSpeed;
+    public int runningSpeed;
+    public int jumpingSpeed;
+
+    // items
+    public List<string> items;
+
+    // abilities
+    public float strength;
+    public float dexterity;
+    public float constitution;
+    public float intelligence;
+    public float wisdom;
+    public float charisma;
+    
+}
 
 public class UI_Controller : MonoBehaviour {
 
-    // -- --------------------------------------------------
+    // -----------------------------------------------------
+    // JSON
+    //
+    Player player = new Player();
+    //
+    public Text Output_JSON;
+    //------------------------------------------------------
 
     // Character Name
     public InputField Input_CharacterName;
@@ -63,7 +109,7 @@ public class UI_Controller : MonoBehaviour {
     public Text Output_JumpingSlider;
 
 
-    // ------------- FUNCTIONS --------------------
+    // ------------- FUNCTIONS -------------------------------------------------
 
     void Start()
     {
@@ -72,19 +118,28 @@ public class UI_Controller : MonoBehaviour {
 
     void Update()
     {
-        
+      
     }
-
-    public void textUpdate(float value)
+    //--------------------------------------------------------------------------------
+    // JSON
+    //
+    public void Display_JSON()
     {
-       // percentageText.text = value.ToString();
-    }
+        //Debug.Log("Display JSON was called");
 
-    // -------------------------------------------------
+        string json = JsonUtility.ToJson(player);
+
+        Output_JSON.text = json;
+    }
+    //
+    //------------------------------------------------------------------------------------
 
     public void Display_CharacterName()
     {
         Output_CharacterName.text = Input_CharacterName.text;
+
+        // JSON
+        player.name = Input_CharacterName.text;
     }
 
     public void Display_Race()
@@ -95,51 +150,80 @@ public class UI_Controller : MonoBehaviour {
         if(Input_Race.value == 0)
         {
             Output_Race.text = "Dragonborn";
+
+            // JSON
+            player.race = "Dragonborn";
         }
 
         else if (Input_Race.value == 1)
         {
             Output_Race.text = "Dwarf";
+
+            // JSON
+            player.race = "Dwarf";
         }
 
         else if (Input_Race.value == 2)
         {
             Output_Race.text = "Elf";
+
+            // JSON
+            player.race = "Elf";
         }
 
         else if (Input_Race.value == 3)
         {
             Output_Race.text = "Gnome";
+
+            // JSON
+            player.race = "Gnome";
         }
 
         else if (Input_Race.value == 4)
         {
             Output_Race.text = "Half-Elf";
+
+            // JSON
+            player.race = "Half-Elf";
         }
+
 
         else if (Input_Race.value == 5)
         {
             Output_Race.text = "Half-Orc";
+
+            // JSON
+            player.race = "Half-Orc";
         }
 
         else if (Input_Race.value == 6)
         {
             Output_Race.text = "Halfling";
+
+            // JSON
+            player.race = "Halfling";
         }
 
         else if (Input_Race.value == 7)
         {
             Output_Race.text = "Human";
+
+            // JSON
+            player.race = "Human";
         }
 
         else if (Input_Race.value == 8)
         {
             Output_Race.text = "Tiefling";
+
+            // JSON
+            player.race = "Tiefling";
         }
 
         else
         {
             Output_Race.text = "Choose a Race";
+
         }
 
     } // ---- end of display race function
@@ -152,61 +236,97 @@ public class UI_Controller : MonoBehaviour {
         if (Input_Class.value == 0)
         {
             Output_Class.text = "Barbarian";
+
+            // JSON
+            player.playerClass = "Barbarian";
         }
 
         else if (Input_Class.value == 1)
         {
             Output_Class.text = "Bard";
+
+            // JSON
+            player.playerClass = "Bard";
         }
 
         else if (Input_Class.value == 2)
         {
             Output_Class.text = "Cleric";
+
+            // JSON
+            player.playerClass = "Cleric";
         }
 
         else if (Input_Class.value == 3)
         {
             Output_Class.text = "Druid";
+
+            // JSON
+            player.playerClass = "Druid";
         }
 
         else if (Input_Class.value == 4)
         {
             Output_Class.text = "Fighter";
+
+            // JSON
+            player.playerClass = "Fighter";
         }
 
         else if (Input_Class.value == 5)
         {
             Output_Class.text = "Monk";
+
+            // JSON
+            player.playerClass = "Monk";
         }
 
         else if (Input_Class.value == 6)
         {
             Output_Class.text = "Paladin";
+
+            // JSON
+            player.playerClass = "Paladin";
         }
 
         else if (Input_Class.value == 7)
         {
             Output_Class.text = "Ranger";
+
+            // JSON
+            player.playerClass = "Ranger";
         }
 
         else if (Input_Class.value == 8)
         {
             Output_Class.text = "Rogue";
+
+            // JSON
+            player.playerClass = "Rogue";
         }
 
         else if (Input_Class.value == 9)
         {
             Output_Class.text = "Sorcerer";
+
+            // JSON
+            player.playerClass = "Sorcerer";
         }
 
         else if (Input_Class.value == 10)
         {
             Output_Class.text = "Warlock";
+
+            // JSON
+            player.playerClass = "Warlock";
         }
 
         else if (Input_Class.value == 11)
         {
             Output_Class.text = "Wizard";
+
+            // JSON
+            player.playerClass = "Wizard";
         }
 
         else
@@ -219,6 +339,9 @@ public class UI_Controller : MonoBehaviour {
     public void Display_Alignment()
     {
         Output_Alignment.text = Input_Alignment.text;
+
+        // JSON
+        player.alignment = Input_Alignment.text;
     }
 
     // Abilities --------------------
@@ -307,6 +430,9 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
 
         Output_Strength.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.strength = sumOfAllRolls;
     }
 
     public void Ability_Dexterity()
@@ -314,6 +440,9 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
         
         Output_Dexterity.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.dexterity = sumOfAllRolls;
     }
 
     public void Ability_Constitution()
@@ -321,6 +450,9 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
         
         Output_Constitution.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.constitution = sumOfAllRolls;
     }
 
     public void Ability_Intelligence()
@@ -328,6 +460,9 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
         
         Output_Intelligence.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.intelligence = sumOfAllRolls;
     }
 
     public void Ability_Wisdom()
@@ -335,6 +470,9 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
         
         Output_Wisdom.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.wisdom = sumOfAllRolls;
     }
 
     public void Ability_Charisma()
@@ -342,35 +480,64 @@ public class UI_Controller : MonoBehaviour {
         DiceRoll();
         
         Output_Charisma.text = sumOfAllRolls.ToString();
+
+        // JSON
+        player.charisma = sumOfAllRolls;
     }
 
     // Health & EXP --------------------------------------------
     public void Display_Current_HealthPoints()
     {
         Output_CurrentHealthPoints.text = Input_CurrentHealthPoints.text;
+
+        // JSON
+        player.currentHealth = int.Parse(Input_CurrentHealthPoints.text);
+
     }
 
     public void Display_Max_HealthPoints()
     {
         Output_MaxHealthPoints.text = Input_MaxHealthPoints.text;
+
+        // JSON
+        player.maxHealth = int.Parse(Input_MaxHealthPoints.text);
     }
 
     public void Display_Current_EXP()
     {
         Output_CurrentExperiencePoints.text = Input_CurrentExperiencePoints.text;
+
+        // JSON
+        player.currentExperience = int.Parse(Input_CurrentExperiencePoints.text);
     }
 
     public void Display_Max_EXP()
     {
         Output_MaxExperiencePoints.text = Input_MaxExperiencePoints.text;
+
+        // JSON
+        player.maxExperience = int.Parse(Input_MaxExperiencePoints.text);
     }
 
     // ------------------------------------------------------------------------
 
     public void Armor()
     {
-       // (Input_Armor.text == int)
-        Output_Armor.text = Input_Armor.text;
+        int val = int.Parse(Input_Armor.text);
+
+        Debug.Log(val);
+
+        if (val < 1 || 100 < val)
+        {
+            Output_Armor.text = "enter int";
+        }
+
+        else
+        {
+            Output_Armor.text = Input_Armor.text;
+
+            player.armor = val;
+        }
     }
 
     // ---- Speed --------------------------
@@ -378,16 +545,25 @@ public class UI_Controller : MonoBehaviour {
     public void Speed_Walking()
     {
         Output_WalkingSlider.text = Input_WalkingSlider.value.ToString();
+
+        // JSON
+        player.walkingSpeed = (int)Input_WalkingSlider.value;
     }
 
     public void Speed_Running()
     {
         Output_RunningSlider.text = Input_RunningSlider.value.ToString();
+
+        // JSON
+        player.runningSpeed = (int)Input_RunningSlider.value;
     }
 
     public void Speed_Jumping()
     {
         Output_JumpingSlider.text = Input_JumpingSlider.value.ToString();
+
+        // JSON
+        player.jumpingSpeed = (int)Input_JumpingSlider.value;
     }
 
 
